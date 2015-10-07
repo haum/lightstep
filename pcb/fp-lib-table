@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name my_olds_libs)(type Legacy)(uri /home/jerome/kicad/arduino_shields.mod)(options "")(descr ""))
+)

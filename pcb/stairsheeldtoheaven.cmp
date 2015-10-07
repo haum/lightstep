@@ -1,0 +1,192 @@
+Cmp-Mod V01 Created by Cvpcb (2014-jul-16 BZR unknown)-product   date = mer. 07 oct. 2015 18:12:13 CEST
+
+BeginCmp
+TimeStamp = /561441BD;
+Reference = JP1;
+ValeurCmp = JUMPER;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /56144C1C;
+Reference = P1;
+ValeurCmp = CONN_10X2;
+IdModule  = JbLb_lib:ATX20;
+EndCmp
+
+BeginCmp
+TimeStamp = /5614A0FA;
+Reference = P2;
+ValeurCmp = 5V;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5614A1B8;
+Reference = P3;
+ValeurCmp = 5V;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /56144C11;
+Reference = P4;
+ValeurCmp = 5V;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561503DA;
+Reference = P5;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561503E0;
+Reference = P6;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561503E6;
+Reference = P7;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561503EC;
+Reference = P8;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /56144C12;
+Reference = P9;
+ValeurCmp = 12V;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561501E7;
+Reference = P10;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561501ED;
+Reference = P11;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561501F3;
+Reference = P12;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561501F9;
+Reference = P13;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561501BA;
+Reference = P14;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561501C0;
+Reference = P15;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561501C6;
+Reference = P16;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561501CC;
+Reference = P17;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5614ED0E;
+Reference = P18;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5614ED14;
+Reference = P19;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5614ED1A;
+Reference = P20;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5614ED20;
+Reference = P21;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /561438F4;
+Reference = P22;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /56143B04;
+Reference = P23;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /56143B0A;
+Reference = P24;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /56143B10;
+Reference = P25;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /56142E35;
+Reference = SHIELD1;
+ValeurCmp = ARDUINO_SHIELD_R3;
+IdModule  = JbLb_lib:ARDUINO_SHIELD_R3;
+EndCmp
+
+EndListe
