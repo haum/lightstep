@@ -1,4 +1,4 @@
-update=jeu. 08 oct. 2015 10:08:37 CEST
+update=jeu. 08 oct. 2015 20:59:52 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=/home/jerome/kicad/libs_kicad_haum
+LibDir=../../libs_kicad
 [eeschema/libraries]
 LibName1=arduino_shieldsNCL
 LibName2=power
