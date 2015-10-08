@@ -1,4 +1,4 @@
-update=mar. 06 oct. 2015 22:25:08 CEST
+update=jeu. 08 oct. 2015 10:08:37 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=/home/jerome/kicad_sources/KicadLib.pretty
+LibDir=/home/jerome/kicad/libs_kicad_haum
 [eeschema/libraries]
 LibName1=arduino_shieldsNCL
 LibName2=power
@@ -59,3 +59,4 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
+LibName31=/home/jerome/kicad/libs_kicad_haum/crumpschemes
