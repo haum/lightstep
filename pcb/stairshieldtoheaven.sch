@@ -29,14 +29,13 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:crumpschemes
-LIBS:stairsheeldtoheaven-cache
+LIBS:stairshieldtoheaven-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "StairSheeldtoHeaven"
+Title "StairShieldtoHeaven"
 Date "07 oct. 2015"
 Rev "0.1"
 Comp "Haum.org"
@@ -253,9 +252,9 @@ F 3 "" H 4200 4850 60  0000 C CNN
 	1    4200 4850
 	0    1    1    0   
 $EndComp
-Text Label 4300 4250 3    60   ~ 0
+Text Label 4300 3800 3    60   ~ 0
 data
-Text Label 4100 4275 3    60   ~ 0
+Text Label 4100 3800 3    60   ~ 0
 clock
 Text Label 2650 3500 3    60   ~ 0
 data
@@ -661,8 +660,6 @@ Wire Wire Line
 	1500 2300 1100 2300
 Connection ~ 1100 2300
 Wire Wire Line
-	4300 4500 4300 4250
-Wire Wire Line
 	2750 3500 2750 3650
 Wire Bus Line
 	10050 850  10050 2900
@@ -885,8 +882,6 @@ F 3 "" H 3550 1600 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	3400 1600 3550 1600
-Wire Wire Line
-	4100 4500 4100 4275
 $Comp
 L JUMPER JP2
 U 1 1 5616612B
@@ -902,4 +897,56 @@ Text Label 2750 4375 0    60   ~ 0
 PG
 Wire Wire Line
 	2150 4375 2150 4750
+$Comp
+L R R3
+U 1 1 5616E140
+P 4300 4250
+F 0 "R3" V 4380 4250 40  0000 C CNN
+F 1 "RL" V 4307 4251 40  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 4230 4250 30  0001 C CNN
+F 3 "" H 4300 4250 30  0000 C CNN
+	1    4300 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5616E395
+P 4100 4250
+F 0 "R2" V 4180 4250 40  0000 C CNN
+F 1 "RL" V 4107 4251 40  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 4030 4250 30  0001 C CNN
+F 3 "" H 4100 4250 30  0000 C CNN
+	1    4100 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 5616E3F5
+P 3775 4500
+F 0 "R1" V 3855 4500 40  0000 C CNN
+F 1 "RPLD" V 3782 4501 40  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3705 4500 30  0001 C CNN
+F 3 "" H 3775 4500 30  0000 C CNN
+	1    3775 4500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4025 4500 4100 4500
+$Comp
+L GND-RESCUE-atxpowerboard #PWR010
+U 1 1 5616E92F
+P 3525 4675
+F 0 "#PWR010" H 3525 4675 30  0001 C CNN
+F 1 "GND" H 3525 4605 30  0001 C CNN
+F 2 "" H 3525 4675 60  0000 C CNN
+F 3 "" H 3525 4675 60  0000 C CNN
+	1    3525 4675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3525 4500 3525 4675
+Wire Wire Line
+	4100 3800 4100 4000
+Wire Wire Line
+	4300 3800 4300 4000
 $EndSCHEMATC
