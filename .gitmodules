@@ -7,3 +7,4 @@
 [submodule "lightstep_fw/_submodules/arduino-libs/PolychrHAUM"]
 	path = lightstep_fw/_submodules/arduino-libs/PolychrHAUM
 	url = https://github.com/haum/polychrhaum
+	branch = full_fastled_support
