@@ -2,7 +2,7 @@
 
 Sheeld arduino (format R3) pour connecter et piloter une alim ATX de pc.
 
-Le sheeld comporte aussi des borniers pour acceder a chaque port de l'arduino
+Le shield comporte aussi des borniers pour acceder a chaque port de l'arduino
 
 Réalisé avec Kicad https://github.com/haum/libs_kicad
 
