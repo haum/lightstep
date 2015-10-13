@@ -59,3 +59,5 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
+LibName31=/home/jerome/kicad/libs_kicad_haum/crumpschemes
+LibName32=/home/plop/libs_kicad/arduino_shieldsNCL
