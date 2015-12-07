@@ -1,2 +1,3 @@
 *.bak
 *.kicad_pcb-bak
+lightstep_fw/build-*
