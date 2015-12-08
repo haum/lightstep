@@ -1,5 +1,4 @@
-
-#include "weel.h"
+#include "wheel.h"
 
 //Input a value 0 to 255 to get a color value.
 //The colours are a transition r - g -b - back to r
