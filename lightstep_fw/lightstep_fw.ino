@@ -2,7 +2,7 @@
 
 #include "animations.h"
 
-#define NLEDS 25
+// #define NLEDS 25
 
 CRGB leds[NLEDS];
 
@@ -17,8 +17,8 @@ void setup() {
 void loop() {
     memset(leds, 0, NLEDS*3);
 
-    K2000(leds, current_time);
-
+    // K2000(leds, current_time);
+	rainbowwipe_up(leds,current_time);
     FastLED.show();
 
     delay(1000);

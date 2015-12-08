@@ -1,5 +1,8 @@
 #include <Arduino.h>
 #define TIME_FRAME 0xFF
+#define NLEDS 25
+#ifndef __LUZ__
+#define __LUZ__
 //
 // Mappings
 //  * Two garlands around the middle axe (from bottom-left to upper-right)
@@ -25,3 +28,4 @@ static const uint8_t ring_luz[7][4] = {
     { 23, 24, 24, 23},
 };
 
+#endif
