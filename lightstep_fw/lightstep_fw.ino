@@ -18,9 +18,10 @@ void loop() {
     memset(leds, 0, NLEDS*3);
 
     // K2000(leds, current_time);
-	rainbowwipe_up(leds,current_time);
+	rainbowwipe_ring(leds,current_time);
+	// rainbowwipe_up(leds,current_time);
     FastLED.show();
 
-    delay(1000);
+    delay(400);
     current_time++;
 }
