@@ -16,3 +16,15 @@ void rainbowwipe_ring(CRGB *leds, int time) {
 		}
     }
 }
+
+void rainbowwipe_updown(CRGB *leds, int time) {
+    int height = time%7;
+    if (time/7%2==0) {
+        height = 6 - height;
+    }
+	for (int i=0; i <= height; i++) {
+		for (int j=0; j<4 ; j++) {
+			leds[ring_luz[i][j]]=Wheel( (i * 256 / 7 ) % 255);
+		}
+    }
+}

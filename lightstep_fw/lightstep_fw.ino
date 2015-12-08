@@ -17,11 +17,12 @@ void setup() {
 void loop() {
     memset(leds, 0, NLEDS*3);
 
-    // K2000(leds, current_time);
-	rainbowwipe_ring(leds,current_time);
-	// rainbowwipe_up(leds,current_time);
+    rainbowwipe_updown(leds, current_time);
+	// rainbowwipe_ring(leds,current_time);
+	// K2000(leds, current_time);
+	//rainbowwipe_up(leds,current_time);
     FastLED.show();
 
-    delay(400);
+    delay(100);
     current_time++;
 }
