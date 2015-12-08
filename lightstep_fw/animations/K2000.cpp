@@ -25,13 +25,23 @@
 #include "K2000.h"
 
 
-void K2000(CRGB *leds, int time) {
+void K2000(CRGB *leds, uint8_t time) {
 
-    int column_num = time%6;
-    int height = (time/6)%4;
+    int height = time%7;
+    int height_trace = height-1;
 
-    leds[column_luz[height][column_num]].setRGB(0xff, 0xff, 0xff);
-    // leds[column_luz[2][height]].setRGB(0xff, 0xff, 0xff);
+    if (time/7%2==0) {
+        height = 6 - height;
+        height_trace = 6 - height_trace;
+    }
+
+    if (height_trace == -1) height_trace = 0;
+    if (height_trace == 7) height_trace = 6;
+
+    for (int j=0; j<4 ; j++) {
+        leds[ring_luz[height_trace][j]].setRGB(255*0.05, 0x00, 0x00);
+        leds[ring_luz[height][j]].setRGB(0xff, 0x00, 0x00);
+    }
 }
 
 
