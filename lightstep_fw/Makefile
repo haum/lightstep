@@ -5,7 +5,8 @@ RELATIVE_PATH?=.
 
 #ALTERNATE_CORE_PATH=/usr/share/arduino/hardware/Leoke
 
-# BOARD_TAG     ?= pro5v328
+
+# BOARD_TAG     ?= pro
 # ARDUINO_PORT  ?= /dev/ttyUSB0
 BOARD_TAG     ?= leonardo
 ARDUINO_PORT  ?= /dev/ttyACM0
@@ -19,7 +20,7 @@ PC_CXX?=g++
 # RULES
 
 SUBMODULES=$(RELATIVE_PATH)/_submodules
-ARDUINO_LIBS=FastLED PolychrHAUM
+ARDUINO_LIBS=FastLED
 LOCAL_CPP_SRCS=$(wildcard *.cpp [!_]*/*.cpp [!_]*/[!_]*/*.cpp)
 USER_LIB_PATH=$(SUBMODULES)/arduino-libs
 
