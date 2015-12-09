@@ -41,6 +41,6 @@ void loop() {
 
 	delay(100);
 	current_time++;
-	pulse (leds, CRGB::Red, 25, current_time);
+	pulse (leds, CRGB::DarkRed, 25, current_time);
 	digitalWrite(13, !digitalRead(13)); // change state of LED
 }
