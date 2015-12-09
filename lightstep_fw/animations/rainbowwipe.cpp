@@ -28,3 +28,14 @@ void rainbowwipe_updown(CRGB *leds, int time) {
 		}
     }
 }
+void my_rainbowwipe_updown(CRGB *leds, int time) {
+    int height = time%6;
+    if (time/6%2==0) {
+        height = 5 - height;
+    }
+	for (int i=0; i <= height; i++) {
+		for (int j=0; j<4 ; j++) {
+			leds[column_jblb[j][i]]=Wheel( (i * 256 / 6 ) % 255);
+		}
+    }
+}
