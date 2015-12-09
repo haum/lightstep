@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #define TIME_FRAME 0xFF
-#define NLEDS 25
+#define NLEDS 50
 #ifndef __LUZ__
 #define __LUZ__
 //
@@ -27,5 +27,11 @@ static const uint8_t ring_luz[7][4] = {
     { 21, 20, 22, 18},
     { 23, 24, 24, 23},
 };
-
+//  * Four columns (Front, Right, Left, Back)
+static const uint8_t column_jblb[4][6] = {
+    { 0, 1, 2, 3, 4, 5 },
+    { 19, 18, 17, 16, 15, 14 },
+    { 20, 21, 22, 23, 24, 25 },
+    { 39, 38, 37, 36, 35, 34 }
+};
 #endif
