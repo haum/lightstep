@@ -9,6 +9,7 @@ CRGB leds[NLEDS];
 uint8_t current_time = 0;
 
 void setup() {
+	Serial.begin(115200);
 	// initialize digital pin 13 as an output.
 	pinMode(13, OUTPUT);
 	// config inputs
@@ -41,6 +42,5 @@ void loop() {
 
 	delay(100);
 	current_time++;
-	pulse (leds, CRGB::DarkRed, 25, current_time);
 	digitalWrite(13, !digitalRead(13)); // change state of LED
 }

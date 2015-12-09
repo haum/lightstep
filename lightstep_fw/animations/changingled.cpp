@@ -26,10 +26,13 @@
 
 
 void pulse(CRGB *leds, struct CRGB color, int nled, uint8_t time) {
-	int brigth = time % 64;
-	leds[nled].r= ((color.r * brigth/64 ) % 255);
-	leds[nled].g= ((color.g * brigth/64 ) % 255);
-	leds[nled].b= ((color.b * brigth/642) % 255);
+    int brigth = time % 64;
+    if (time/64%2==0) {
+        brigth = 64 - brigth;
+    }
+    leds[nled].r= ((color.r * brigth/64 ) % 255);
+    leds[nled].g= ((color.g * brigth/64 ) % 255);
+    leds[nled].b= ((color.b * brigth/642) % 255);
 }
 
 
