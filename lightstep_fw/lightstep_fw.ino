@@ -1,5 +1,9 @@
 #include <FastLED.h>
 
+// define organsation for LEDS see luz.h
+
+#include "ledconfig.h"
+
 #include "animations.h"
 
 // #define NLEDS 25
@@ -17,8 +21,7 @@ void setup() {
 		pinMode(i, INPUT_PULLUP);
 		}
 		
-	// FastLED.addLeds<WS2801,GRB>(leds, NLEDS); // luz
-	FastLED.addLeds<WS2801,RGB>(leds, NLEDS); // jblb_leds
+	FastLED.addLeds<WS2801,LEDORDER>(leds, NLEDS);
 	memset(leds, 0, NLEDS*3);
     FastLED.show();
     digitalWrite(13, LOW);
@@ -36,7 +39,15 @@ void loop() {
 	// K2000(leds, current_time);
 	// rainbowwipe_up(leds,current_time);
 	else {
+		/*
+		 * Pulse to show life when nothing animate
+		 * hardcoded for jblb led's
+		 * 
+		 * TODO take value by config
+		 *
+		 */
 		pulse (leds, CRGB::Red, 25, current_time);
+		pulse (leds, CRGB::Red, 24, current_time);
 		}
 	FastLED.show();
 
