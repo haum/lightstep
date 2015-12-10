@@ -32,10 +32,8 @@ void initmoving() {
 
 void move_up(CRGB *leds, struct CRGB color) {
 	leds[current_movsteep[0]]=color;
-	if (current_movsteep[0] < NLEDS){
-		current_movsteep[0]++;
-		}
-	else {
+	current_movsteep[0]++;
+	if (current_movsteep[0] > NLEDS-1){
 		current_movsteep[0]=0;
 	}
 }

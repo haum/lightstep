@@ -35,7 +35,6 @@ void loop() {
 	
 	if (! digitalRead(7)) {
 		got_anim =true; 
-		// move_up(leds, CRGB::Green, current_time);
 		move_up(leds, CRGB::Green);
 	}
 	if (! digitalRead(6)) {
