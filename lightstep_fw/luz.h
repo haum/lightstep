@@ -6,6 +6,7 @@
 #define COLUMNS 4
 #define LINES 6
 #define RINGS 7
+#define GARLAND_LENGH 12
 //
 // Mappings
 //  * Two garlands around the middle axe (from bottom-left to upper-right)
