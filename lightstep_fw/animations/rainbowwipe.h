@@ -1,4 +1,4 @@
-#include "../luz.h"
+#include "../ledconfig.h"
 #include "../utils/wheel.h"
 #include <FastLED.h>
 
