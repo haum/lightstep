@@ -46,7 +46,9 @@ void loop() {
 		 * TODO take value by config
 		 *
 		 */
+#ifdef __JBLB_LED__
 		pulse (leds, CRGB::Red, 25, current_time);
+#endif
 		pulse (leds, CRGB::Red, 24, current_time);
 		}
 	FastLED.show();

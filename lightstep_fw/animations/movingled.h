@@ -1,4 +1,4 @@
-#include "../luz.h"
+#include "../ledconfig.h"
 #include <FastLED.h>
 
 void move_up(CRGB *leds, uint8_t time);

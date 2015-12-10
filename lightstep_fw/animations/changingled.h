@@ -1,4 +1,4 @@
-#include "../luz.h"
+#include "../ledconfig.h"
 #include <FastLED.h>
 
 void pulse(CRGB *leds, struct CRGB color, int led, uint8_t time);
