@@ -30,7 +30,7 @@
 #define NLEDS 50
 #define COLUMNS 5
 #define LINES 10
-#define RINGS 7
+#define RINGS 10
 #define GARLAND_LENGH 37
 //
 // Mappings
@@ -39,7 +39,7 @@ static const uint8_t garland_leds[2][37] = {
     { 0, 18, 22, 36, 44, 34, 26, 12, 8, 10, 28, 32, 46, 34, 24, 16, 2, 18, 20, 38, 42, 36, 24, 14, 6, 12, 28, 30, 48, 32, 26, 14, 4, 16, 22, 38, 40 },
     { 9, 11, 27, 33, 45, 35, 23, 17, 1, 19, 21, 37, 43, 35, 25, 13, 7, 11, 29, 31, 47, 33, 25, 15, 3, 17, 21, 39, 41, 37, 23, 15, 5, 13, 27, 31, 49 }
 };
-//  * ten rings / lines 
+//  * ten rings / lines ( from bottom rigth to top left )
 static const uint8_t ring_leds[LINES][COLUMNS] = {
     { 0, 19, 20, 39, 40},
     { 1, 18, 21, 38, 41},
@@ -53,7 +53,7 @@ static const uint8_t ring_leds[LINES][COLUMNS] = {
     { 9, 10, 29, 30, 49},
 };
 
-//  * Five columns
+//  * Five columns ( from bottom rigth to top left )
 static const uint8_t column_leds[COLUMNS][LINES] = {
     { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
     { 19, 18, 17, 16, 15, 14, 13, 12, 11, 10},
