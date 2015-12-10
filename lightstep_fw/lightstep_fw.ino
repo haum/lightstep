@@ -14,6 +14,7 @@ uint8_t current_time = 0;
 boolean got_anim;
 
 void setup() {
+	Serial.begin(115200);
 	// initialize digital pin 13 as an output.
 	pinMode(13, OUTPUT);
 	// config inputs
@@ -24,6 +25,7 @@ void setup() {
 	FastLED.addLeds<WS2801,LEDORDER>(leds, NLEDS);
 	memset(leds, 0, NLEDS*3);
     FastLED.show();
+    initmoving();
     digitalWrite(13, LOW);
 }
 
@@ -33,7 +35,8 @@ void loop() {
 	
 	if (! digitalRead(7)) {
 		got_anim =true; 
-		move_up(leds, current_time);
+		// move_up(leds, CRGB::Green, current_time);
+		move_up(leds, CRGB::Green);
 	}
 	if (! digitalRead(6)) {
 		got_anim =true; 
@@ -46,6 +49,11 @@ void loop() {
 	if (! digitalRead(4)) {
 		got_anim =true; 
 		fill_garland_up (leds, CRGB::Orange, 1, current_time);
+	}
+	if (! digitalRead(3)) {
+		got_anim =true; 
+		move_down(leds, CRGB::Blue, current_time);
+		// fill_garland_up (leds, CRGB::Orange, 1, current_time);
 	}
 
 	// rainbowwipe_ring(leds,current_time);

@@ -23,15 +23,31 @@
  */
 
 #include "movingled.h"
+uint8_t current_movsteep[4];
 
-void move_up(CRGB *leds, uint8_t time) {
+void initmoving() {
+	memset(current_movsteep, 0, 5);
+}
+
+
+void move_up(CRGB *leds, struct CRGB color) {
+	leds[current_movsteep[0]]=color;
+	if (current_movsteep[0] < NLEDS){
+		current_movsteep[0]++;
+		}
+	else {
+		current_movsteep[0]=0;
+	}
+}
+	
+void move_up(CRGB *leds, struct CRGB color, uint8_t time) {
 	int led = time%NLEDS;
-	leds[led].setRGB(0xff, 0x00, 0x00);
+	leds[led]=color;
 	}
 
-void move_down(CRGB *leds, uint8_t time) {
-	int led = NLEDS - (time%NLEDS);
-	leds[led].setRGB(0xff, 0x00, 0x00);
+void move_down(CRGB *leds,  struct CRGB color, uint8_t time) {
+	int led = (NLEDS-1) - (time%NLEDS);
+	leds[led]=color;
 	}
 
 void garland_up (CRGB *leds, struct CRGB color, int ngar, uint8_t time) {
@@ -47,4 +63,9 @@ void fill_garland_up (CRGB *leds, struct CRGB color, int ngar, uint8_t time) {
 		leds[garland_leds[ngar][i]]=color;
 		}
 	}
+
+void fallinglight (CRGB *leds, struct CRGB color, int ncol, uint8_t time) {
+		// falling LED of column  ncol
+	}
+	
 
