@@ -11,9 +11,9 @@
 CRGB leds[NLEDS];
 
 uint8_t current_time = 0;
+boolean got_anim;
 
 void setup() {
-	Serial.begin(115200);
 	// initialize digital pin 13 as an output.
 	pinMode(13, OUTPUT);
 	// config inputs
@@ -29,16 +29,29 @@ void setup() {
 
 void loop() {
 	memset(leds, 0, NLEDS*3);
-	if (! digitalRead(6)) {
+	got_anim = false;
+	
+	if (! digitalRead(7)) {
+		got_anim =true; 
 		move_up(leds, current_time);
 	}
-	else if (! digitalRead(7)) {
+	if (! digitalRead(6)) {
+		got_anim =true; 
 		my_rainbowwipe_updown(leds, current_time);
 	}
+	if (! digitalRead(5)) {
+		got_anim =true; 
+		garland_up (leds, CRGB::Blue, 0, current_time);
+	}
+	if (! digitalRead(4)) {
+		got_anim =true; 
+		fill_garland_up (leds, CRGB::Orange, 1, current_time);
+	}
+
 	// rainbowwipe_ring(leds,current_time);
 	// K2000(leds, current_time);
 	// rainbowwipe_up(leds,current_time);
-	else {
+	if (! got_anim ) {
 		/*
 		 * Pulse to show life when nothing animate
 		 * hardcoded for jblb led's

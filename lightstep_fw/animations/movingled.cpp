@@ -30,7 +30,21 @@ void move_up(CRGB *leds, uint8_t time) {
 	}
 
 void move_down(CRGB *leds, uint8_t time) {
-
+	int led = NLEDS - (time%NLEDS);
+	leds[led].setRGB(0xff, 0x00, 0x00);
 	}
 
+void garland_up (CRGB *leds, struct CRGB color, int ngar, uint8_t time) {
+
+	int led =time%GARLAND_LENGH;
+	leds[garland_leds[ngar][led]]=color;
+	}
+
+void fill_garland_up (CRGB *leds, struct CRGB color, int ngar, uint8_t time) {
+
+	int led =time%GARLAND_LENGH;
+	for (int i=0; i <= led; i++) {
+		leds[garland_leds[ngar][i]]=color;
+		}
+	}
 

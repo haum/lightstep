@@ -31,13 +31,13 @@
 #define COLUMNS 5
 #define LINES 10
 #define RINGS 7
-
+#define GARLAND_LENGH 37
 //
 // Mappings
-//  * Two garlands around the middle axe (from bottom-left to upper-right)
-static const uint8_t garland_leds[2][12] = {
-    { 0, 3, 4, 7, 8, 11, 12, 15, 16, 19, 20, 23 },
-    { 1, 2, 5, 6, 9, 10, 13, 14, 17, 18, 21, 22 }
+//  * Two garlands 
+static const uint8_t garland_leds[2][37] = {
+    { 0, 18, 22, 36, 44, 34, 26, 12, 8, 10, 28, 32, 46, 34, 24, 16, 2, 18, 20, 38, 42, 36, 24, 14, 6, 12, 28, 30, 48, 32, 26, 14, 4, 16, 22, 38, 40 },
+    { 9, 11, 27, 33, 45, 35, 23, 17, 1, 19, 21, 37, 43, 35, 25, 13, 7, 11, 29, 31, 47, 33, 25, 15, 3, 17, 21, 39, 41, 37, 23, 15, 5, 13, 27, 31, 49 }
 };
 //  * ten rings / lines 
 static const uint8_t ring_leds[LINES][COLUMNS] = {
@@ -55,8 +55,9 @@ static const uint8_t ring_leds[LINES][COLUMNS] = {
 
 //  * Five columns
 static const uint8_t column_leds[COLUMNS][LINES] = {
-    { 0, 1, 2, 3, 4, 5 ,6,7,8,9},
-    { 19, 18, 17, 16, 15, 14,13,12,11,10 },
-    { 20, 21, 22, 23, 24, 25,26,27,28,29 },
-    { 39, 38, 37, 36, 35, 34,33,32,31,30 }
+    { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+    { 19, 18, 17, 16, 15, 14, 13, 12, 11, 10},
+    { 20, 21, 22, 23, 24, 25, 26, 27, 28, 29},
+    { 39, 38, 37, 36, 35, 34, 33, 32, 31, 30},
+    { 40, 41, 42, 43, 44, 45, 46, 47, 48, 49}
 };
