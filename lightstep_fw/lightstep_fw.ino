@@ -21,39 +21,49 @@ void setup() {
 	for (int i=0; i<12; i++){
 		pinMode(i, INPUT_PULLUP);
 		}
-		
+
 	FastLED.addLeds<WS2801,LEDORDER>(leds, NLEDS);
 	memset(leds, 0, NLEDS*3);
-    FastLED.show();
-    initmoving();
-    digitalWrite(13, LOW);
+	FastLED.show();
+	initmoving();
+	digitalWrite(13, LOW);
 }
 
 void loop() {
 	memset(leds, 0, NLEDS*3);
 	got_anim = false;
-	
+
 	if (! digitalRead(7)) {
-		got_anim =true; 
+		got_anim =true;
 		move_up(leds, CRGB::Green);
 	}
 	if (! digitalRead(6)) {
-		got_anim =true; 
+		got_anim =true;
 		my_rainbowwipe_updown(leds, current_time);
 	}
 	if (! digitalRead(5)) {
-		got_anim =true; 
+		got_anim =true;
 		garland_up (leds, CRGB::Blue, 0, current_time);
 	}
 	if (! digitalRead(4)) {
-		got_anim =true; 
+		got_anim =true;
 		fill_garland_up (leds, CRGB::Orange, 1, current_time);
 	}
 	if (! digitalRead(3)) {
-		got_anim =true; 
+		got_anim =true;
 		move_down(leds, CRGB::Blue, current_time);
 		// fill_garland_up (leds, CRGB::Orange, 1, current_time);
 	}
+	if (! digitalRead(2)) {
+		got_anim =true;
+	}
+	fallinglight (leds, CRGB::Purple, 3, !digitalRead(2) );
+	if (! digitalRead(1)) {
+		got_anim =true;
+	}
+	movinguplight (leds, CRGB::Purple, 3, !digitalRead(1) );
+
+
 
 	// rainbowwipe_ring(leds,current_time);
 	// K2000(leds, current_time);
@@ -62,7 +72,7 @@ void loop() {
 		/*
 		 * Pulse to show life when nothing animate
 		 * hardcoded for jblb led's
-		 * 
+		 *
 		 * TODO take value by config
 		 *
 		 */

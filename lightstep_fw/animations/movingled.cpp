@@ -29,7 +29,6 @@ void initmoving() {
 	memset(current_movsteep, 0, 5);
 }
 
-
 void move_up(CRGB *leds, struct CRGB color) {
 	leds[current_movsteep[0]]=color;
 	current_movsteep[0]++;
@@ -37,7 +36,7 @@ void move_up(CRGB *leds, struct CRGB color) {
 		current_movsteep[0]=0;
 	}
 }
-	
+
 void move_up(CRGB *leds, struct CRGB color, uint8_t time) {
 	int led = time%NLEDS;
 	leds[led]=color;
@@ -62,8 +61,28 @@ void fill_garland_up (CRGB *leds, struct CRGB color, int ngar, uint8_t time) {
 		}
 	}
 
-void fallinglight (CRGB *leds, struct CRGB color, int ncol, uint8_t time) {
-		// falling LED of column  ncol
+void movinguplight (CRGB *leds, struct CRGB color, int ncol, boolean fall) {
+	// LED of column  ncol go up
+	if (!fall && current_movsteep[1] != LINES-2) {
+		current_movsteep[1] = 0;
+		}
+	if (fall || current_movsteep[1] != 0 ) {
+		leds[column_leds[ncol][current_movsteep[1]]]=color;
+		if (current_movsteep[1] < LINES-1){
+			current_movsteep[1]++;
+			}
+		}
 	}
-	
 
+void fallinglight (CRGB *leds, struct CRGB color, int ncol, boolean fall) {
+	// falling LED of column  ncol
+	if (!fall && current_movsteep[2] != LINES-2) {
+		current_movsteep[2] = 0;
+		}
+	if (fall || current_movsteep[2] != 0 ) {
+		leds[column_leds[ncol][(LINES-1) - current_movsteep[2]]]=color;
+		if (current_movsteep[2] < LINES-1){
+			current_movsteep[2]++;
+			}
+		}
+	}
