@@ -66,7 +66,7 @@ void loop() {
 	// K2000(leds, current_time);
 	// rainbowwipe_up(leds,current_time);
 	if (! got_anim ) {
-		breathing.animate(leds, current_time);
+		breathing.animate(leds, CRGB::Blue, current_time);
 	}
 	FastLED.show();
 	FastLED.delay(10);
