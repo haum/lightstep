@@ -9,6 +9,8 @@ CRGB leds[NLEDS];
 uint8_t current_time = 0;
 bool got_anim = false;
 
+AnimationBreath breathing;
+
 void setup() {
 	Serial.begin(115200);
 	// initialize digital pin 13 as an output.
@@ -54,27 +56,17 @@ void loop() {
 	if (! digitalRead(2)) {
 		got_anim =true;
 	}
-	fallinglight (leds, CRGB::Purple, 3, !digitalRead(2) );
+	// fallinglight (leds, CRGB::Purple, 3, !digitalRead(2) );
 	if (! digitalRead(1)) {
 		got_anim =true;
 	}
-	movinguplight (leds, CRGB::Purple, 3, !digitalRead(1) );
+	// movinguplight (leds, CRGB::Purple, 3, !digitalRead(1) );
 
 	// rainbowwipe_ring(leds,current_time);
 	// K2000(leds, current_time);
 	// rainbowwipe_up(leds,current_time);
 	if (! got_anim ) {
-		/*
-		 * Pulse to show life when nothing animate
-		 * hardcoded for jblb led's
-		 *
-		 * TODO take value by config
-		 *
-		 */
-#ifdef JBLB_LED
-		pulse (leds, CRGB::Red, 25, current_time);
-#endif
-		pulse (leds, CRGB::Red, 24, current_time);
+		breathing.animate(leds, current_time);
 	}
 	FastLED.show();
 	FastLED.delay(10);
