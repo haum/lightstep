@@ -24,6 +24,8 @@
 
 #include "K2000.h"
 
+#include "../ledconfig.h"
+
 
 void K2000(CRGB *leds, uint8_t time) {
 

@@ -23,6 +23,9 @@
  */
 
 #include "movingled.h"
+
+#include "../ledconfig.h"
+
 uint8_t current_movsteep[4];
 
 void initmoving() {

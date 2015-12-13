@@ -1,5 +1,6 @@
-
 #include "rainbowwipe.h"
+
+#include "../ledconfig.h"
 
 void rainbowwipe_up(CRGB *leds, int time) {
 	int height = (time)%6;
