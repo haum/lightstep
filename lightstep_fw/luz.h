@@ -1,12 +1,13 @@
+#ifndef __LUZ_H__
+#define __LUZ_H__
 
-
-#warning LUZ_LED  (Just to tell youre here !)
 #define LEDORDER GRB
 #define NLEDS 25
 #define COLUMNS 4
 #define LINES 6
 #define RINGS 7
 #define GARLAND_LENGH 12
+
 //
 // Mappings
 //  * Two garlands around the middle axe (from bottom-left to upper-right)
@@ -31,3 +32,5 @@ static const uint8_t ring_leds[7][4] = {
     { 21, 20, 22, 18},
     { 23, 24, 24, 23},
 };
+
+#endif

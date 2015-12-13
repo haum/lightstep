@@ -29,12 +29,10 @@
 #include <Arduino.h>
 #define TIME_FRAME 0xFF
 
-#define __JBLB_LED__ 
-
-#ifdef __JBLB_LED__
-#include "jblb_led.h"
+#ifdef JBLB_LED
+  #include "jblb_led.h"
 #else
-#include "luz.h"
+  #include "luz.h"
 #endif 
 
 

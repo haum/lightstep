@@ -1,17 +1,13 @@
 #include <FastLED.h>
 
-// define organsation for LEDS see luz.h
-
 #include "ledconfig.h"
 
 #include "animations.h"
 
-// #define NLEDS 25
-
 CRGB leds[NLEDS];
 
 uint8_t current_time = 0;
-boolean got_anim;
+bool got_anim = false;
 
 void setup() {
 	Serial.begin(115200);
@@ -20,7 +16,7 @@ void setup() {
 	// config inputs
 	for (int i=0; i<12; i++){
 		pinMode(i, INPUT_PULLUP);
-		}
+	}
 
 	FastLED.addLeds<WS2801,LEDORDER>(leds, NLEDS);
 	memset(leds, 0, NLEDS*3);
@@ -80,7 +76,7 @@ void loop() {
 		pulse (leds, CRGB::Red, 25, current_time);
 #endif
 		pulse (leds, CRGB::Red, 24, current_time);
-		}
+	}
 	FastLED.show();
 
 	delay(100);

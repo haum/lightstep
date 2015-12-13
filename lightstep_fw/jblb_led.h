@@ -22,9 +22,6 @@
  *
  */
 
-
-#warning JBLB LEDS  (Just to tell youre here !)
-
 // 10x5 rgb LEDS panel
 #define LEDORDER RGB
 #define NLEDS 50
