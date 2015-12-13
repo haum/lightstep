@@ -1,8 +1,21 @@
 #include "rainbowwipe.h"
 
 #include "../ledconfig.h"
+#include "../utils/wheel.h"
 
-void my_rainbowwipe_updown(CRGB *leds, int time) {
+AnimationRainbowWipe::AnimationRainbowWipe():
+	time(0),
+	prescaler_counter(0)
+{
+}
+
+void AnimationRainbowWipe::animate(CRGB *leds, const CRGB baseColor, const uint8_t step) {
+	prescaler_counter++;
+	if (prescaler_counter%10 == 0) {
+		prescaler_counter = 0;
+		time++;
+	}
+
 	int height = time%LINES;
 	if (time/LINES%2==0) {
 		height = (LINES-1) - height;

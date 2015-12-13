@@ -11,6 +11,7 @@ bool got_anim = false;
 
 AnimationBreath breathing;
 AnimationK2000 k2000;
+AnimationRainbowWipe rainbowWipe;
 
 void setup() {
 	Serial.begin(115200);
@@ -39,7 +40,7 @@ void loop() {
 	}
 	if (! digitalRead(6)) {
 		got_anim =true;
-		my_rainbowwipe_updown(leds, current_time);
+		rainbowWipe.animate(leds, CRGB::Red, current_time);
 	}
 	if (! digitalRead(5)) {
 		got_anim =true;
@@ -62,12 +63,8 @@ void loop() {
 		got_anim =true;
 	}
 	// movinguplight (leds, CRGB::Purple, 3, !digitalRead(1) );
-
-	// rainbowwipe_ring(leds,current_time);
-	// K2000(leds, current_time);
-	// rainbowwipe_up(leds,current_time);
 	if (! got_anim ) {
-		k2000.animate(leds, CRGB::Blue, current_time);
+		rainbowWipe.animate(leds, CRGB::Blue, current_time);
 	}
 	FastLED.show();
 	FastLED.delay(10);

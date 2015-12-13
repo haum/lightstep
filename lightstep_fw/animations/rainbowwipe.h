@@ -3,8 +3,16 @@
 
 #include <FastLED.h>
 
-#include "../utils/wheel.h"
+#include "../animation.h"
 
-void my_rainbowwipe_updown(CRGB *leds, int time);
+class AnimationRainbowWipe : public Animation {
+public:
+	AnimationRainbowWipe();
+	void animate(CRGB *leds, const CRGB baseColor, uint8_t step);
+private:
+	uint8_t time;
+	uint8_t prescaler_counter;
+};
+
 
 #endif
