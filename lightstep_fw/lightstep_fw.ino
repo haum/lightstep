@@ -10,6 +10,7 @@ uint8_t current_time = 0;
 bool got_anim = false;
 
 AnimationBreath breathing;
+AnimationK2000 k2000;
 
 void setup() {
 	Serial.begin(115200);
@@ -66,7 +67,7 @@ void loop() {
 	// K2000(leds, current_time);
 	// rainbowwipe_up(leds,current_time);
 	if (! got_anim ) {
-		breathing.animate(leds, CRGB::Blue, current_time);
+		k2000.animate(leds, CRGB::Blue, current_time);
 	}
 	FastLED.show();
 	FastLED.delay(10);

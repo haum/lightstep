@@ -3,6 +3,12 @@
 
 #include <FastLED.h>
 
-void K2000(CRGB *leds, uint8_t time);
+class AnimationK2000 {
+public:
+	AnimationK2000();
+	void animate(CRGB *leds, const CRGB baseColor, const uint8_t step);
+private:
+	uint8_t time;
+};
 
 #endif
