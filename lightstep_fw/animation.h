@@ -6,7 +6,7 @@
 class Animation
 {
 public:
-	virtual void init(CRGB *leds);
+	virtual void init(CRGB *leds) {};
 	virtual void animate(CRGB *leds, const CRGB baseColor, const uint8_t step) = 0;
 };
 
