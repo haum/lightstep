@@ -28,7 +28,7 @@
 #define COLUMNS 5
 #define LINES 10
 #define RINGS 10
-#define GARLAND_LENGH 37
+#define GARLAND_LENGTH 37
 //
 // Mappings
 //  * Two garlands 

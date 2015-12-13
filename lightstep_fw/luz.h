@@ -6,7 +6,7 @@
 #define COLUMNS 4
 #define LINES 6
 #define RINGS 7
-#define GARLAND_LENGH 12
+#define GARLAND_LENGTH 12
 
 //
 // Mappings
