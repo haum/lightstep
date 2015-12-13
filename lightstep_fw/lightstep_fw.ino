@@ -4,14 +4,27 @@
 
 #include "animations.h"
 
+/* Leds frambuffer */
 CRGB leds[NLEDS];
 
+/* Frame rolling counter */
 uint8_t current_time = 0;
-bool got_anim = false;
 
+/* Number of steps used for color alteration */
+const int color_steps_count = 4;
+
+/* Incrementing value which is used to compute base_color */
+uint32_t turning_hue = 0;
+
+/* List of animations */
 AnimationBreath breathing;
 AnimationK2000 k2000;
 AnimationRainbowWipe rainbowWipe;
+Animation * animations[] = {
+	&breathing,
+	&k2000,
+	&rainbowWipe,
+};
 
 void setup() {
 	Serial.begin(115200);
@@ -32,44 +45,41 @@ void setup() {
 
 void loop() {
 	FastLED.clear();
-	got_anim = false;
 
-	if (! digitalRead(7)) {
-		got_anim =true;
-		move_up(leds, CRGB::Green);
+	// Compute 'dwarf' numbers used to compute which animation and color to display
+	bool dwarf_speedup = false;
+	uint16_t dwarf_color = 0;
+	uint16_t dwarf_animation = 0;
+	if (!digitalRead(0))
+		dwarf_speedup = true;
+	for (int i = 1; i <= color_steps_count; ++i) {
+		if (!digitalRead(i))
+			dwarf_color += i;
 	}
-	if (! digitalRead(6)) {
-		got_anim =true;
-		rainbowWipe.animate(leds, CRGB::Red, current_time);
+	for (int i = color_steps_count + 1; i < 13; ++i) {
+		if (!digitalRead(i))
+			dwarf_animation += i - color_steps_count;
 	}
-	if (! digitalRead(5)) {
-		got_anim =true;
-		garland_up (leds, CRGB::Blue, 0, current_time);
-	}
-	if (! digitalRead(4)) {
-		got_anim =true;
-		fill_garland_up (leds, CRGB::Orange, 1, current_time);
-	}
-	if (! digitalRead(3)) {
-		got_anim =true;
-		move_down(leds, CRGB::Blue, current_time);
-		// fill_garland_up (leds, CRGB::Orange, 1, current_time);
-	}
-	if (! digitalRead(2)) {
-		got_anim =true;
-	}
-	// fallinglight (leds, CRGB::Purple, 3, !digitalRead(2) );
-	if (! digitalRead(1)) {
-		got_anim =true;
-	}
-	// movinguplight (leds, CRGB::Purple, 3, !digitalRead(1) );
-	if (! got_anim ) {
-		rainbowWipe.animate(leds, CRGB::Blue, current_time);
-	}
+
+	// Choose base color
+	uint8_t base_hue = ((uint8_t)(turning_hue >> 2)) + (dwarf_color << 4); // TODO: random formula to be changed
+	CHSV base_color(base_hue, 255, 255);
+
+	// Choose animation to display
+	Animation * anim = &breathing;
+	if (dwarf_animation != 0)
+		anim = animations[dwarf_animation % (sizeof(animations)/sizeof(*animations))];
+
+	// Animate
+	anim->animate(leds, base_color, current_time);
 	FastLED.show();
 	FastLED.delay(10);
 
+	// Loop counters
 	current_time++;
-	digitalWrite(13, !digitalRead(13)); // change state of LED
+	turning_hue += dwarf_speedup ? 3 : 1;
+
+	// Alive indicator
+	digitalWrite(13, !digitalRead(13));
 }
 
