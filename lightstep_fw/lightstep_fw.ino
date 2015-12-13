@@ -79,7 +79,7 @@ void loop() {
 	}
 	FastLED.show();
 
-	delay(100);
+	FastLED.delay(100);
 	current_time++;
 	digitalWrite(13, !digitalRead(13)); // change state of LED
 }
