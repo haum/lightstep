@@ -19,14 +19,15 @@ void setup() {
 	}
 
 	FastLED.addLeds<WS2801,LEDORDER>(leds, NLEDS);
-	memset(leds, 0, NLEDS*3);
+	FastLED.clear();
 	FastLED.show();
+
 	initmoving();
 	digitalWrite(13, LOW);
 }
 
 void loop() {
-	memset(leds, 0, NLEDS*3);
+	FastLED.clear();
 	got_anim = false;
 
 	if (! digitalRead(7)) {
