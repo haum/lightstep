@@ -2,8 +2,9 @@
 #define __K2000_H__
 
 #include <FastLED.h>
+#include "../animation.h"
 
-class AnimationK2000 {
+class AnimationK2000 : public Animation {
 public:
 	AnimationK2000();
 	void animate(CRGB *leds, const CRGB baseColor, const uint8_t step);
