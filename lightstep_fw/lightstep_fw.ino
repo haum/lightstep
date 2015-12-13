@@ -59,8 +59,6 @@ void loop() {
 	}
 	movinguplight (leds, CRGB::Purple, 3, !digitalRead(1) );
 
-
-
 	// rainbowwipe_ring(leds,current_time);
 	// K2000(leds, current_time);
 	// rainbowwipe_up(leds,current_time);
@@ -72,7 +70,7 @@ void loop() {
 		 * TODO take value by config
 		 *
 		 */
-#ifdef __JBLB_LED__
+#ifdef JBLB_LED
 		pulse (leds, CRGB::Red, 25, current_time);
 #endif
 		pulse (leds, CRGB::Red, 24, current_time);
@@ -83,3 +81,4 @@ void loop() {
 	current_time++;
 	digitalWrite(13, !digitalRead(13)); // change state of LED
 }
+
