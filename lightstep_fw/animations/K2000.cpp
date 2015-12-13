@@ -3,14 +3,15 @@
 #include "../ledconfig.h"
 
 AnimationK2000::AnimationK2000():
-	time(0)
+	time(0),
+	prescaler_counter(0)
 {
 }
 
 void AnimationK2000::animate(CRGB *leds, const CRGB baseColor, const uint8_t step) {
-	static uint8_t slowme = 0;
-	slowme++; if (slowme%10 == 0) {
-		slowme = 0;
+	prescaler_counter++;
+	if (prescaler_counter%10 == 0) {
+		prescaler_counter = 0;
 		time++;
 	}
 
