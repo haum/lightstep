@@ -77,8 +77,8 @@ void loop() {
 		pulse (leds, CRGB::Red, 24, current_time);
 	}
 	FastLED.show();
+	FastLED.delay(10);
 
-	FastLED.delay(100);
 	current_time++;
 	digitalWrite(13, !digitalRead(13)); // change state of LED
 }
