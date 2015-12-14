@@ -26,7 +26,6 @@ public:
 	AnimationMoveUp();
 	void animate(CRGB *leds, const CRGB baseColor, uint8_t step);
 private:
-	uint8_t time;
 	uint8_t prescaler_counter;
 	uint8_t movingstep;
 };

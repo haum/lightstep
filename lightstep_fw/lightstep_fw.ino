@@ -59,7 +59,7 @@ void loop() {
 		if (!digitalRead(i))
 			dwarf_color += i;
 	}
-	for (int i = color_steps_count + 1; i < 5; ++i) {
+	for (int i = color_steps_count + 1; i < 8; ++i) {
 		if (!digitalRead(i))
 			dwarf_animation += i - color_steps_count;
 	}
