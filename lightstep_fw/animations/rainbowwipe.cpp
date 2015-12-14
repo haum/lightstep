@@ -22,7 +22,9 @@ void AnimationRainbowWipe::animate(CRGB *leds, const CRGB baseColor, const uint8
 	}
 	for (int i=0; i <= height; i++) {
 		for (int j=0; j<COLUMNS ; j++) {
-			leds[column_leds[j][i]]=Wheel( (i * 256 / LINES ) % 255);
+			// leds[column_leds[j][i]]=Wheel( (i * 256 / LINES ) % 255);
+			leds[column_leds[j][i]]= CHSV( ( (i * 256 / LINES ) % 255), 255, 255);
+
 		}
 	}
 }
