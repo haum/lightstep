@@ -26,6 +26,23 @@
 
 #include "../ledconfig.h"
 
+AnimationMoveUp::AnimationMoveUp():
+	prescaler_counter(0),
+	movingstep(0)
+{
+}
+void AnimationMoveUp::animate(CRGB *leds, const CRGB baseColor, uint8_t step){
+	prescaler_counter++;
+	if (prescaler_counter%10 == 0) {
+		prescaler_counter = 0;
+		leds[movingstep]=baseColor;
+		movingstep ++;
+		if (movingstep > NLEDS - 1) {
+			movingstep = 0;
+			}
+	}
+}
+
 uint8_t current_movestep[4];
 
 void initmoving() {
@@ -64,12 +81,12 @@ void fill_garland_up (CRGB *leds, struct CRGB color, int ngar, uint8_t time) {
 	}
 }
 
-void movinguplight (CRGB *leds, struct CRGB color, int ncol, boolean fall) {
+void movinguplight (CRGB *leds, struct CRGB color, int ncol, boolean goup) {
 	// LED of column  ncol go up
-	if (!fall && current_movestep[1] != LINES-2) {
+	if (!goup && current_movestep[1] == LINES-1) {
 		current_movestep[1] = 0;
-	}
-	if (fall || current_movestep[1] != 0 ) {
+		}
+	if (goup || current_movestep[1] != 0 ) {
 		leds[column_leds[ncol][current_movestep[1]]]=color;
 		if (current_movestep[1] < LINES-1){
 			current_movestep[1]++;
@@ -79,9 +96,9 @@ void movinguplight (CRGB *leds, struct CRGB color, int ncol, boolean fall) {
 
 void fallinglight (CRGB *leds, struct CRGB color, int ncol, boolean fall) {
 	// falling LED of column  ncol
-	if (!fall && current_movestep[2] != LINES-2) {
+	if (!fall && current_movestep[2] == LINES-1) {
 		current_movestep[2] = 0;
-	}
+		}
 	if (fall || current_movestep[2] != 0 ) {
 		leds[column_leds[ncol][(LINES-1) - current_movestep[2]]]=color;
 		if (current_movestep[2] < LINES-1){

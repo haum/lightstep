@@ -20,10 +20,13 @@ uint32_t turning_hue = 0;
 AnimationBreath breathing;
 AnimationK2000 k2000;
 AnimationRainbowWipe rainbowWipe;
+AnimationMoveUp moveUp;
+
 Animation * animations[] = {
 	&breathing,
 	&k2000,
 	&rainbowWipe,
+	&moveUp
 };
 
 void setup() {
@@ -56,7 +59,7 @@ void loop() {
 		if (!digitalRead(i))
 			dwarf_color += i;
 	}
-	for (int i = color_steps_count + 1; i < 13; ++i) {
+	for (int i = color_steps_count + 1; i < 5; ++i) {
 		if (!digitalRead(i))
 			dwarf_animation += i - color_steps_count;
 	}
