@@ -2,12 +2,40 @@
 
 #include "breath.h"
 
+#include "../ledconfig.h"
+
+uint8_t brightness(uint8_t step, const uint8_t height)
+{
+	const uint8_t kN = 64;
+	const uint8_t scaledKN = scale8(kN, height);
+	step = step > 127 ? 255-step : step;
+	if(step < scaledKN) {
+		return 0;
+	}
+	else if(step>scaledKN+127-kN) {
+		return 255;
+	}
+	return map(step, scaledKN, scaledKN+127-kN, 0, 255);
+}
+
 void AnimationBreath::animate(Framebuffer &leds, const CRGB baseColor, const uint8_t step)
 {
-	const uint8_t led_id = 24;
-	leds[led_id] = baseColor;
+	uint8_t led_id = 24;
 
-	int brightness = (step < 128) ? ((127-step)*2) : ((step-128)*2);
-	leds[led_id].fadeToBlackBy(brightness);
+	for(int i=0; i<(LINES+1); ++i) {
+		switch(i) {
+		case 0:
+			leds[led_id] = baseColor;
+			leds[led_id].nscale8_video(brightness(step, 0));
+			break;
+		default:
+			const uint8_t line = i-1;
+			for(uint8_t col=0; col<4; ++col) {
+				led_id = column_leds[col][line];
+				leds[led_id] = baseColor;
+				leds[led_id].nscale8_video(brightness(step, map(line, 0, LINES-1, 0, 255)));
+			}
+		}
+	}
 }
 
