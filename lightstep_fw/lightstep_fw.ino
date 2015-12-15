@@ -40,6 +40,7 @@ void setup() {
 		pinMode(i, INPUT_PULLUP);
 	}
 
+	fb.init();
 	FastLED.setBrightness(64);
 	FastLED.clear();
 	FastLED.show();

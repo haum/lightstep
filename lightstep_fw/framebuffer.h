@@ -8,7 +8,7 @@ private:
 	CRGB leds[NLEDS];
 	CRGB dummy;
 public:
-	Framebuffer() {
+	void init() {
 		FastLED.addLeds<WS2801,LEDORDER>(leds, NLEDS);
 	}
 	CRGB & operator [] (int index) {
