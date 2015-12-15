@@ -4,8 +4,10 @@
 
 #include "animations.h"
 
+#include "framebuffer.h"
+
 /* Leds frambuffer */
-CRGB leds[NLEDS];
+Framebuffer fb;
 
 /* Frame rolling counter */
 uint8_t current_time = 0;
@@ -38,7 +40,6 @@ void setup() {
 		pinMode(i, INPUT_PULLUP);
 	}
 
-	FastLED.addLeds<WS2801,LEDORDER>(leds, NLEDS);
 	FastLED.clear();
 	FastLED.show();
 
@@ -74,7 +75,7 @@ void loop() {
 		anim = animations[dwarf_animation % (sizeof(animations)/sizeof(*animations))];
 
 	// Animate
-	anim->animate(leds, base_color, current_time);
+	anim->animate(fb, base_color, current_time);
 	FastLED.show();
 	FastLED.delay(10);
 

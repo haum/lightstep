@@ -24,7 +24,7 @@ private:
 class AnimationMoveUp : public Animation {
 public:
 	AnimationMoveUp();
-	void animate(CRGB *leds, const CRGB baseColor, uint8_t step);
+	void animate(Framebuffer &leds, const CRGB baseColor, uint8_t step);
 private:
 	uint8_t prescaler_counter;
 	uint8_t movingstep;

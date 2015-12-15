@@ -2,11 +2,7 @@
 
 #include "breath.h"
 
-void AnimationBreath::init(CRGB *leds)
-{
-}
-
-void AnimationBreath::animate(CRGB *leds, const CRGB baseColor, const uint8_t step)
+void AnimationBreath::animate(Framebuffer &leds, const CRGB baseColor, const uint8_t step)
 {
 	const uint8_t led_id = 24;
 	leds[led_id] = baseColor;

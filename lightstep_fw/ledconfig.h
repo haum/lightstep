@@ -35,5 +35,7 @@
   #include "luz.h"
 #endif 
 
+#include "framebuffer.h"
+
 
 #endif // __LEDCONFIG__

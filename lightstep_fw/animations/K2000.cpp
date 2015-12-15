@@ -8,7 +8,7 @@ AnimationK2000::AnimationK2000():
 {
 }
 
-void AnimationK2000::animate(CRGB *leds, const CRGB baseColor, const uint8_t step) {
+void AnimationK2000::animate(Framebuffer & leds, const CRGB baseColor, const uint8_t step) {
 	prescaler_counter++;
 	if (prescaler_counter%10 == 0) {
 		prescaler_counter = 0;

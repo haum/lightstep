@@ -9,7 +9,7 @@ AnimationRainbowWipe::AnimationRainbowWipe():
 {
 }
 
-void AnimationRainbowWipe::animate(CRGB *leds, const CRGB baseColor, const uint8_t step) {
+void AnimationRainbowWipe::animate(Framebuffer &leds, const CRGB baseColor, const uint8_t step) {
 	prescaler_counter++;
 	if (prescaler_counter%10 == 0) {
 		prescaler_counter = 0;

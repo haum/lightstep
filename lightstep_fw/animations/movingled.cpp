@@ -31,7 +31,7 @@ AnimationMoveUp::AnimationMoveUp():
 	movingstep(0)
 {
 }
-void AnimationMoveUp::animate(CRGB *leds, const CRGB baseColor, uint8_t step){
+void AnimationMoveUp::animate(Framebuffer &leds, const CRGB baseColor, uint8_t step){
 	prescaler_counter++;
 	leds[movingstep]=baseColor;
 	if (prescaler_counter%10 == 0) {
