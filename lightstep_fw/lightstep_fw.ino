@@ -10,8 +10,8 @@ CRGB leds[NLEDS];
 /* Frame rolling counter */
 uint8_t current_time = 0;
 
-/* Number of steps used for color alteration */
-const int color_steps_count = 4;
+/* Number of stairs used for color alteration */
+const int color_stairs_count = 4;
 
 /* Incrementing value which is used to compute base_color */
 uint32_t turning_hue = 0;
@@ -55,13 +55,13 @@ void loop() {
 	uint16_t dwarf_animation = 0;
 	if (!digitalRead(0))
 		dwarf_speedup = true;
-	for (int i = 1; i <= color_steps_count; ++i) {
+	for (int i = 1; i <= color_stairs_count; ++i) {
 		if (!digitalRead(i))
 			dwarf_color += i;
 	}
-	for (int i = color_steps_count + 1; i < 8; ++i) {
+	for (int i = color_stairs_count + 1; i < 8; ++i) {
 		if (!digitalRead(i))
-			dwarf_animation += i - color_steps_count;
+			dwarf_animation += i - color_stairs_count;
 	}
 
 	// Choose base color
