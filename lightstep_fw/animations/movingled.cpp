@@ -42,6 +42,25 @@ void AnimationMoveUp::animate(Framebuffer &leds, const CRGB baseColor, uint8_t s
 			}
 	}
 }
+AnimationWipeUp::AnimationWipeUp():
+	prescaler_counter(0),
+	movingstep(0)
+{
+}
+
+void AnimationWipeUp::animate(Framebuffer &leds, const CRGB baseColor, uint8_t step){
+	int col = 2;
+	prescaler_counter++;
+	for (int i=0; i <= movingstep; i++) {
+		leds[column_leds[col][i]]=baseColor;
+		}
+	if (prescaler_counter%10 == 0) {
+		movingstep++;
+		if (movingstep > LINES - 1) {
+			movingstep = 0;
+			}
+		}
+}
 
 uint8_t current_movestep[4];
 

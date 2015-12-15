@@ -19,6 +19,7 @@ const int color_stairs_count = 4;
 uint32_t turning_hue = 0;
 
 /* List of animations */
+AnimationWipeUp wipeup;
 AnimationBreath breathing;
 AnimationK2000 k2000;
 AnimationRainbowWipe rainbowWipe;
@@ -26,6 +27,7 @@ AnimationMoveUp moveUp;
 
 Animation * animations[] = {
 	&breathing,
+	&wipeup,
 	&k2000,
 	&rainbowWipe,
 	&moveUp

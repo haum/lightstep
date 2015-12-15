@@ -13,7 +13,14 @@ private:
 	uint8_t movingstep;
 };
 
-
+class AnimationWipeUp: public Animation {
+public:
+	AnimationWipeUp();
+	void animate(Framebuffer &leds, const CRGB baseColor, uint8_t step);
+private:
+	uint8_t prescaler_counter;
+	uint8_t movingstep;
+};
 
 void initmoving();
 void move_up(CRGB *leds, struct CRGB color, uint8_t time);
