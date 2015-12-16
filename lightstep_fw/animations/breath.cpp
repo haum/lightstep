@@ -38,7 +38,7 @@ void AnimationBreath::animate(Framebuffer &leds, const CRGB baseColor, const uin
 				break;
 			default:
 				const uint8_t line = i-1;
-				for(uint8_t col=0; col<4; ++col) {
+				for(uint8_t col=0; col<COLUMNS; ++col) {
 					led_id = column_leds[col][line];
 					leds[led_id] = baseColor;
 					leds[led_id].nscale8_video(brightness(step, map(line, 0, LINES-1, 0, 255)));
