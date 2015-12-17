@@ -37,12 +37,12 @@ Animation * animations[] = {
 
 void setup() {
 	Serial.begin(115200);
-	// initialize digital pin 13 as an output.
-	pinMode(13, OUTPUT);
-	// config inputs
-	for (int i=0; i<12; i++){
+
+	// Config inputs with pull-ups
+	for (int i = 0; i <= 13; ++i)
 		pinMode(i, INPUT_PULLUP);
-	}
+	for (int i = A0; i <= A5; ++i)
+		pinMode(i, INPUT_PULLUP);
 
 	fb.init();
 	FastLED.setBrightness(64);
@@ -50,7 +50,6 @@ void setup() {
 	FastLED.show();
 
 	initmoving();
-	digitalWrite(13, LOW);
 }
 
 void loop() {
@@ -66,9 +65,13 @@ void loop() {
 		if (!digitalRead(i))
 			dwarf_color += i;
 	}
-	for (int i = color_stairs_count + 1; i < 8; ++i) {
+	for (int i = color_stairs_count + 1; i <= 13; ++i) {
 		if (!digitalRead(i))
 			dwarf_animation += i - color_stairs_count;
+	}
+	for (int i = A0; i <= A5; ++i) {
+		if (!digitalRead(i))
+			dwarf_animation += i - A0 + 1;
 	}
 
 	// Choose base color
@@ -88,8 +91,5 @@ void loop() {
 	// Loop counters
 	current_time++;
 	turning_hue += dwarf_speedup ? 3 : 1;
-
-	// Alive indicator
-	digitalWrite(13, !digitalRead(13));
 }
 
