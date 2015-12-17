@@ -19,6 +19,7 @@ const int color_stairs_count = 4;
 uint32_t turning_hue = 0;
 
 /* List of animations */
+AnimationAlive alive;
 AnimationWipeUp wipeup;
 AnimationBreath breathing;
 AnimationK2000 k2000;
@@ -79,7 +80,7 @@ void loop() {
 	CHSV base_color(base_hue, 255, 255);
 
 	// Choose animation to display
-	Animation * anim = &breathing;
+	Animation * anim = &alive;
 	if (dwarf_animation != 0)
 		anim = animations[dwarf_animation % (sizeof(animations)/sizeof(*animations))];
 
