@@ -1,5 +1,3 @@
-#include <FastLED.h>
-
 #include "magicpoint.h"
 
 #include "../ledconfig.h"

@@ -1,6 +1,7 @@
 #ifndef _FRAMEBUFFER_H_
 #define _FRAMEBUFFER_H_
 
+#include <FastLED.h>
 #include "ledconfig.h"
 
 class Framebuffer {
