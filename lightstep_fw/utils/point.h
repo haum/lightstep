@@ -23,9 +23,11 @@ class Point {
 			return (d1 < d2) ? computeBrightnessFor(z1) : computeBrightnessFor(z2);
 		}
 
-		void computeVFor(const uint8_t z)
+		CHSV computeCHSVFor(const uint8_t z)
 		{
-			_hsv.value = computeBrightnessFor(z);
+			CHSV color = _hsv;
+			color.value = scale8(_hsv.value, computeBrightnessFor(z));
+			return color;
 		}
 
 		void setZ(const uint8_t z) { _z = z; }

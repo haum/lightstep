@@ -16,11 +16,10 @@ void AnimationMagicPoint::animate(Framebuffer &leds, CHSV baseColor, const uint8
 	for(uint8_t col=0; col<COLUMNS; ++col) {
 		for(uint8_t line=0; line<LINES; ++line) {
 			const uint8_t led_id = column_leds[col][line];
-			p1.computeVFor(map(realLine(col, line), 0, 2*LINES, 0, 255));
-			p2.computeVFor(map(realLine(col, line), 0, 2*LINES, 0, 255));
-			p3.computeVFor(map(realLine(col, line), 0, 2*LINES, 0, 255));
-
-			leds[led_id] = p1.hsv();
+			CRGB color = p1.computeCHSVFor(map(realLine(col, line), 0, 2*LINES, 0, 255));
+			color += p2.computeCHSVFor(map(realLine(col, line), 0, 2*LINES, 0, 255));
+			color += p3.computeCHSVFor(map(realLine(col, line), 0, 2*LINES, 0, 255));
+			leds[led_id] = color;
 		}
 	}
 }
