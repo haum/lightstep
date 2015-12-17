@@ -26,6 +26,7 @@ AnimationK2000 k2000;
 AnimationRainbowWipe rainbowWipe;
 AnimationMoveUp moveUp;
 AnimationMagicPoint magicpoint;
+AnimationGlitter glitter;
 
 Animation * animations[] = {
 	&breathing,
@@ -33,7 +34,8 @@ Animation * animations[] = {
 	&k2000,
 	&rainbowWipe,
 	&magicpoint,
-	&moveUp
+	&moveUp,
+	&glitter
 };
 
 void setup() {

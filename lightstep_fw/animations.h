@@ -7,5 +7,6 @@
 #include "animations/magicpoint.h"
 #include "animations/movingled.h"
 #include "animations/rainbowwipe.h"
+#include "animations/glitter.h"
 
 #endif
