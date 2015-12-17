@@ -20,21 +20,21 @@ uint32_t turning_hue = 0;
 
 /* List of animations */
 AnimationAlive alive;
-AnimationWipeUp wipeup;
 AnimationBreath breathing;
-AnimationK2000 k2000;
-AnimationRainbowWipe rainbowWipe;
-AnimationMoveUp moveUp;
 AnimationMagicPoint magicpoint;
+AnimationMoveUp moveUp;
+AnimationMultiPoints multipoints;
+AnimationRainbowWipe rainbowWipe;
+AnimationWipeUp wipeup;
 AnimationGlitter glitter;
 
 Animation * animations[] = {
 	&breathing,
-	&wipeup,
-	&k2000,
-	&rainbowWipe,
 	&magicpoint,
 	&moveUp,
+	&multipoints,
+	&rainbowWipe,
+	&wipeup,
 	&glitter
 };
 

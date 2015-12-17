@@ -1,3 +1,6 @@
+#ifndef __POINT_H__
+#define __POINT_H__
+
 class Point {
 	public:
 		Point(const uint8_t z, const uint8_t radius = 127, const CHSV hsv = CHSV(HUE_RED,255,255)) :
@@ -41,3 +44,4 @@ class Point {
 		uint8_t _radius;
 };
 
+#endif
