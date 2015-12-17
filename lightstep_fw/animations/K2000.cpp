@@ -18,13 +18,13 @@ void AnimationK2000::animate(Framebuffer & leds, CHSV baseColor, const uint8_t s
 	int height = time%LINES;
 	int height_trace = height-1;
 
-	if (time/LINES%2==0) {
-		height = (LINES-1) - height;
-		height_trace = (LINES-1) - height_trace;
+	if (time/RINGS%2==0) {
+		height = (RINGS-1) - height;
+		height_trace = (RINGS-1) - height_trace;
 	}
 
 	if (height_trace == -1) height_trace = 0;
-	if (height_trace == LINES) height_trace = (LINES-1);
+	if (height_trace == RINGS) height_trace = (RINGS-1);
 
 	for (int j=0; j<COLUMNS ; j++) {
 		leds[ring_leds[height_trace][j]] = baseColor;
