@@ -26,22 +26,22 @@ uint8_t brightness(uint8_t step, const uint8_t height)
 	}
 }
 
-void AnimationBreath::animate(Framebuffer &leds, const CRGB baseColor, const uint8_t step)
+void AnimationBreath::animate(Framebuffer &leds, CHSV baseColor, const uint8_t step)
 {
 	uint8_t led_id = 24;
 
 	for(int i=0; i<(LINES+1); ++i) {
 		switch(i) {
 			case 0:
+				baseColor.value = brightness(step, 0);
 				leds[led_id] = baseColor;
-				leds[led_id].nscale8_video(brightness(step, 0));
 				break;
 			default:
 				const uint8_t line = i-1;
 				for(uint8_t col=0; col<COLUMNS; ++col) {
 					led_id = column_leds[col][line];
+					baseColor.value = brightness(step, map(line, 0, LINES-1, 0, 255));
 					leds[led_id] = baseColor;
-					leds[led_id].nscale8_video(brightness(step, map(line, 0, LINES-1, 0, 255)));
 				}
 		}
 	}

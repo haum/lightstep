@@ -7,7 +7,7 @@
 class Animation
 {
 public:
-	virtual void animate(Framebuffer & leds, const CRGB baseColor, const uint8_t step) = 0;
+	virtual void animate(Framebuffer & leds, CHSV baseColor, const uint8_t step) = 0;
 };
 
 #endif

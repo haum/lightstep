@@ -31,7 +31,7 @@ AnimationMoveUp::AnimationMoveUp():
 	movingstep(0)
 {
 }
-void AnimationMoveUp::animate(Framebuffer &leds, const CRGB baseColor, uint8_t step){
+void AnimationMoveUp::animate(Framebuffer &leds, CHSV baseColor, uint8_t step){
 	prescaler_counter++;
 	leds[movingstep]=baseColor;
 	if (prescaler_counter%10 == 0) {
@@ -48,7 +48,7 @@ AnimationWipeUp::AnimationWipeUp():
 {
 }
 
-void AnimationWipeUp::animate(Framebuffer &leds, const CRGB baseColor, uint8_t step){
+void AnimationWipeUp::animate(Framebuffer &leds, CHSV baseColor, uint8_t step){
 	int col = 2;
 	prescaler_counter++;
 	for (int i=0; i <= movingstep; i++) {

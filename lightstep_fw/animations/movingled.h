@@ -7,7 +7,7 @@
 class AnimationMoveUp : public Animation {
 public:
 	AnimationMoveUp();
-	void animate(Framebuffer &leds, const CRGB baseColor, uint8_t step);
+	void animate(Framebuffer &leds, CHSV baseColor, uint8_t step);
 private:
 	uint8_t prescaler_counter;
 	uint8_t movingstep;
@@ -16,7 +16,7 @@ private:
 class AnimationWipeUp: public Animation {
 public:
 	AnimationWipeUp();
-	void animate(Framebuffer &leds, const CRGB baseColor, uint8_t step);
+	void animate(Framebuffer &leds, CHSV baseColor, uint8_t step);
 private:
 	uint8_t prescaler_counter;
 	uint8_t movingstep;

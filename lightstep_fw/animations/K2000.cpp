@@ -8,7 +8,7 @@ AnimationK2000::AnimationK2000():
 {
 }
 
-void AnimationK2000::animate(Framebuffer & leds, const CRGB baseColor, const uint8_t step) {
+void AnimationK2000::animate(Framebuffer & leds, CHSV baseColor, const uint8_t step) {
 	prescaler_counter++;
 	if (prescaler_counter%10 == 0) {
 		prescaler_counter = 0;
@@ -27,8 +27,8 @@ void AnimationK2000::animate(Framebuffer & leds, const CRGB baseColor, const uin
 	if (height_trace == LINES) height_trace = (LINES-1);
 
 	for (int j=0; j<COLUMNS ; j++) {
-		leds[ring_leds[height_trace][j]].setRGB(baseColor.r/(j+1), baseColor.g/(j+1), baseColor.b/(j+1));
-		leds[ring_leds[height][j]].setRGB(baseColor.r, baseColor.g, baseColor.b);
+		leds[ring_leds[height_trace][j]] = baseColor;
+		leds[ring_leds[height][j]] = baseColor;
 	}
 }
 

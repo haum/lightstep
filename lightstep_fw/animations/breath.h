@@ -6,7 +6,7 @@
 class AnimationBreath : public Animation
 {
 public:
-	void animate(Framebuffer &leds, const CRGB baseColor, const uint8_t step);
+	void animate(Framebuffer &leds, CHSV baseColor, const uint8_t step);
 };
 
 #endif
