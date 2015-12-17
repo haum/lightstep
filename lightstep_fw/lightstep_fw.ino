@@ -24,12 +24,14 @@ AnimationBreath breathing;
 AnimationK2000 k2000;
 AnimationRainbowWipe rainbowWipe;
 AnimationMoveUp moveUp;
+AnimationMagicPoint magicpoint;
 
 Animation * animations[] = {
 	&breathing,
 	&wipeup,
 	&k2000,
 	&rainbowWipe,
+	&magicpoint,
 	&moveUp
 };
 
