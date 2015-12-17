@@ -1,7 +1,6 @@
 #include "rainbowwipe.h"
 
 #include "../ledconfig.h"
-#include "../utils/wheel.h"
 
 AnimationRainbowWipe::AnimationRainbowWipe():
 	time(0),
@@ -22,9 +21,7 @@ void AnimationRainbowWipe::animate(Framebuffer &leds, CHSV baseColor, const uint
 	}
 	for (int i=0; i <= height; i++) {
 		for (int j=0; j<COLUMNS ; j++) {
-			// leds[column_leds[j][i]]=Wheel( (i * 256 / LINES ) % 255);
 			leds[column_leds[j][i]]= CHSV( ( (i * 256 / LINES ) % 255), 255, 255);
-
 		}
 	}
 }
