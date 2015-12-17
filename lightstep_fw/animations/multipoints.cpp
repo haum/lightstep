@@ -1,13 +1,15 @@
-#include "magicpoint.h"
+#include "multipoints.h"
 
 #include "../ledconfig.h"
 #include "../utils/point.h"
 
-uint8_t realLine(const uint8_t column, const uint8_t line) {
-	return column%2 ? line*2 : (line*2)+1;
+namespace {
+	uint8_t realLine(const uint8_t column, const uint8_t line) {
+		return column%2 ? line*2 : (line*2)+1;
+	}
 }
 
-void AnimationMagicPoint::animate(Framebuffer &leds, CHSV baseColor, const uint8_t step)
+void AnimationMultiPoints::animate(Framebuffer &leds, CHSV baseColor, const uint8_t step)
 {
 	Point p1(sin8(step), 42, CHSV(HUE_RED+baseColor.hue, 0, 255));
 	Point p2(sin8(255-step), 64, CHSV(HUE_BLUE+baseColor.hue, 255, 255));

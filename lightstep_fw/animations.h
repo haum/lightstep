@@ -4,7 +4,7 @@
 #include "animations/alive.h"
 #include "animations/breath.h"
 #include "animations/K2000.h"
-#include "animations/magicpoint.h"
+#include "animations/multipoints.h"
 #include "animations/movingled.h"
 #include "animations/rainbowwipe.h"
 
