@@ -34,7 +34,7 @@ AnimationWipeUp wipeup;
 Animation * animations[] = {
 	&breathing,
 	&candy,
-	&glitter
+	&glitter,
 	&k2000,
 	&magicpoint,
 	&moveUp,
