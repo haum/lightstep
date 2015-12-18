@@ -62,11 +62,7 @@ void AnimationWipeUp::animate(Framebuffer &leds, CHSV baseColor, uint8_t step){
 		}
 }
 
-uint8_t current_movestep[4];
-
-void initmoving() {
-	memset(current_movestep, 0, 5);
-}
+static uint8_t current_movestep[4];
 
 void move_up(CRGB *leds, struct CRGB color) {
 	leds[current_movestep[0]]=color;

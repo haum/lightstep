@@ -57,8 +57,6 @@ void setup() {
 	FastLED.setBrightness(255);
 	FastLED.clear();
 	FastLED.show();
-
-	initmoving();
 }
 
 void loop() {
