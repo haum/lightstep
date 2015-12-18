@@ -22,6 +22,7 @@ uint32_t turning_hue = 0;
 AnimationAlive alive;
 AnimationBreath breathing;
 AnimationCandy candy;
+AnimationK2000 k2000;
 AnimationMagicPoint magicpoint;
 AnimationMoveUp moveUp;
 AnimationMultiPoints multipoints;
@@ -32,6 +33,7 @@ AnimationGlitter glitter;
 Animation * animations[] = {
 	&breathing,
 	&candy,
+	&k2000,
 	&magicpoint,
 	&moveUp,
 	&multipoints,
