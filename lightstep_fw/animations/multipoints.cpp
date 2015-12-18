@@ -11,9 +11,9 @@ namespace {
 
 void AnimationMultiPoints::animate(Framebuffer &leds, CHSV baseColor, const uint8_t step)
 {
-	Point p1(sin8(step), 42, CHSV(HUE_RED+baseColor.hue, 0, 255));
+	Point p1(sin8(step), 42, CHSV(HUE_RED+baseColor.hue, 127, 255));
 	Point p2(sin8(255-step), 64, CHSV(HUE_BLUE+baseColor.hue, 255, 255));
-	Point p3(sin8(127-step), 32, CHSV(HUE_GREEN+baseColor.hue, 255, 255));
+	Point p3(sin8(64-step), 32, CHSV(HUE_GREEN+baseColor.hue, 255, 255));
 
 	for(uint8_t col=0; col<COLUMNS; ++col) {
 		for(uint8_t line=0; line<LINES; ++line) {

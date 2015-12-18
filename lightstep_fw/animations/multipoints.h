@@ -1,4 +1,4 @@
-#ifndef __ANIMATION_MUTLTIPOINTS_H__
+#ifndef __ANIMATION_MULTIPOINTS_H__
 #define __ANIMATION_MULTIPOINTS_H__
 
 #include "../animation.h"
