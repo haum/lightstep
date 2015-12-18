@@ -29,6 +29,7 @@ AnimationMoveUp moveUp;
 AnimationMultiPoints multipoints;
 AnimationRainbowWipe rainbowWipe;
 AnimationRemanence remanence;
+AnimationSnake snake;
 AnimationWipeUp wipeup;
 
 Animation * animations[] = {
@@ -41,6 +42,7 @@ Animation * animations[] = {
 	&multipoints,
 	&rainbowWipe,
 	&remanence,
+	&snake,
 	&wipeup,
 };
 
