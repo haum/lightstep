@@ -9,8 +9,8 @@
 #include "animations/magicpoint.h"
 #include "animations/movingled.h"
 #include "animations/multipoints.h"
-#include "animations/snake.h"
-#include "animations/rainbowwipe.h"
+#include "animations/plumeau.h"
 #include "animations/remanence.h"
+#include "animations/snake.h"
 
 #endif

@@ -1,14 +1,14 @@
-#include "rainbowwipe.h"
+#include "plumeau.h"
 
 #include "../ledconfig.h"
 
-AnimationRainbowWipe::AnimationRainbowWipe():
+AnimationPlumeau::AnimationPlumeau():
 	time(0),
 	prescaler_counter(0)
 {
 }
 
-void AnimationRainbowWipe::animate(Framebuffer &leds, CHSV baseColor, const uint8_t step) {
+void AnimationPlumeau::animate(Framebuffer &leds, CHSV baseColor, const uint8_t step) {
 	prescaler_counter++;
 	if (prescaler_counter%10 == 0) {
 		prescaler_counter = 0;

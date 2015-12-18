@@ -27,7 +27,7 @@ AnimationK2000 k2000;
 AnimationMagicPoint magicpoint;
 AnimationMoveUp moveUp;
 AnimationMultiPoints multipoints;
-AnimationRainbowWipe rainbowWipe;
+AnimationPlumeau plumeau;
 AnimationRemanence remanence;
 AnimationSnake snake;
 AnimationWipeUp wipeup;
@@ -40,7 +40,7 @@ Animation * animations[] = {
 	&magicpoint,
 	&moveUp,
 	&multipoints,
-	&rainbowWipe,
+	&plumeau,
 	&remanence,
 	&snake,
 	&wipeup,

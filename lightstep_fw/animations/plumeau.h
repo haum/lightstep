@@ -1,13 +1,13 @@
-#ifndef __RAINBOWWIPE_H__
-#define __RAINBOWWIPE_H__
+#ifndef __PLUMEAU_H__
+#define __PLUMEAU_H__
 
 #include <FastLED.h>
 
 #include "../animation.h"
 
-class AnimationRainbowWipe : public Animation {
+class AnimationPlumeau : public Animation {
 public:
-	AnimationRainbowWipe();
+	AnimationPlumeau();
 	void animate(Framebuffer &leds, CHSV baseColor, uint8_t step);
 private:
 	uint8_t time;
