@@ -21,6 +21,7 @@ uint32_t turning_hue = 0;
 /* List of animations */
 AnimationAlive alive;
 AnimationBreath breathing;
+AnimationCandy candy;
 AnimationMagicPoint magicpoint;
 AnimationMoveUp moveUp;
 AnimationMultiPoints multipoints;
@@ -30,6 +31,7 @@ AnimationGlitter glitter;
 
 Animation * animations[] = {
 	&breathing,
+	&candy,
 	&magicpoint,
 	&moveUp,
 	&multipoints,

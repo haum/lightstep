@@ -3,6 +3,7 @@
 
 #include "animations/alive.h"
 #include "animations/breath.h"
+#include "animations/candy.h"
 #include "animations/magicpoint.h"
 #include "animations/movingled.h"
 #include "animations/multipoints.h"
