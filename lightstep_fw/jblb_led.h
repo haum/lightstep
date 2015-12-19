@@ -29,10 +29,12 @@
 #define LINES 10
 #define RINGS 10
 #define GARLAND_LENGTH 37
+#define GARLAND_COUNT 2
+
 //
 // Mappings
 //  * Two garlands 
-static const uint8_t garland_leds[2][37] = {
+static const uint8_t garland_leds[GARLAND_COUNT][GARLAND_LENGTH] = {
     { 0, 18, 22, 36, 44, 34, 26, 12, 8, 10, 28, 32, 46, 34, 24, 16, 2, 18, 20, 38, 42, 36, 24, 14, 6, 12, 28, 30, 48, 32, 26, 14, 4, 16, 22, 38, 40 },
     { 9, 11, 27, 33, 45, 35, 23, 17, 1, 19, 21, 37, 43, 35, 25, 13, 7, 11, 29, 31, 47, 33, 25, 15, 3, 17, 21, 39, 41, 37, 23, 15, 5, 13, 27, 31, 49 }
 };
