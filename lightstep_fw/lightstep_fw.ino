@@ -33,15 +33,16 @@ AnimationSnake snake;
 AnimationWipeUp wipeup;
 
 Animation * animations[] = {
+	&alive,
 	&breathing,
 	&candy,
 	&glitter,
 	&k2000,
 	&magicpoint,
-	&moveUp,
+	//&moveUp,
 	&multipoints,
 	&plumeau,
-	&remanence,
+	//&remanence,
 	&snake,
 	&wipeup,
 };
@@ -82,9 +83,10 @@ void loop() {
 		if (!digitalRead(i))
 			dwarf_animation += i - A0 + 1;
 	}
+	dwarf_animation += turning_hue >> 15;
 
 	// Choose base color
-	uint8_t base_hue = ((uint8_t)(turning_hue >> 2)) + (dwarf_color << 4); // TODO: random formula to be changed
+	uint8_t base_hue = ((uint8_t)(turning_hue >> 4)) + (dwarf_color << 5); // TODO: random formula to be changed
 	CHSV base_color(base_hue, 255, 255);
 
 	// Choose animation to display
