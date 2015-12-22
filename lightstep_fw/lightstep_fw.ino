@@ -1,4 +1,5 @@
 #include <FastLED.h>
+#include <avr/wdt.h>
 
 #include "ledconfig.h"
 
@@ -49,6 +50,7 @@ Animation * animations[] = {
 
 void setup() {
 	Serial.begin(115200);
+	wdt_enable(WDTO_500MS);
 
 	// Config inputs with pull-ups
 	for (int i = 0; i <= 13; ++i)
@@ -102,5 +104,8 @@ void loop() {
 	// Loop counters
 	current_time++;
 	turning_hue += dwarf_speedup ? 3 : 1;
+
+	// Watchdog reset
+	wdt_reset();
 }
 
